@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  build-and-run:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            arch: arm64
+          - os: ubuntu-latest
+            arch: x64
+          - os: windows-latest
+            arch: x64
+    runs-on: ${{ matrix.os }}
+    name: Build and run
+    steps:
+      - uses: actions/checkout@v4
+      - uses: radekm/setup-c3@v1
+        with:
+          version: v0.6.4
+      - shell: bash
+        run: c3c compile-run --lib somelib someprogram.c3

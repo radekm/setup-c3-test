@@ -1,0 +1,3 @@
+module hello;
+
+extern fn void say(CInt n) @extern("say_hello");
