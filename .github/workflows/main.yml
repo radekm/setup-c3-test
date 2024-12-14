@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: radekm/setup-c3@122e94388b9e77cd3da534b46b7473f3f96a18b2
         with:
-          version: v0.6.4
+          version: v0.6.5
       - shell: bash
         run: c3c compile-run --lib somelib someprogram.c3
   build-and-run-in-cmd:
@@ -32,6 +32,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: radekm/setup-c3@122e94388b9e77cd3da534b46b7473f3f96a18b2
         with:
-          version: v0.6.4
+          version: v0.6.5
       - shell: cmd
         run: c3c compile-run --lib somelib someprogram.c3
